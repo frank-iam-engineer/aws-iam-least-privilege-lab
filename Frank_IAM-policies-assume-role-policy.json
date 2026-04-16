@@ -1,0 +1,14 @@
+{
+  "Version":"2012-10-17",
+  "Statement":[
+    {
+      "Effect":"Allow",
+      "Action":"sts:AssumeRole",
+      "Resources":[
+        "arn:aws:iam::558948635828:role/Dev-ReadOnly-Role",
+        "arn:aws:iam::558948635828:role/QA-Role",
+        "arn:aws:iam::558948635828:role/Admin-Role"
+      ]
+    }
+  ]
+}
