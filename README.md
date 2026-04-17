@@ -33,4 +33,26 @@ Dev-ReadOnly-Role
 ---
 
 ## Status
-In Progress
+In progress
+
+## Evidence
+
+This repository includes CLI evidence showing:
+- Base IAM user identity
+- Successful role assumption into Dev-ReadOnly-Role
+- Successful role chaining into EC2-Admin-Role
+- Permission-based success and failure cases
+
+## Key IAM Concepts Demonstrated
+- Least privilege
+- Trust policy vs permission policy
+- STS temporary credentials
+- Role assumption
+- Role chaining
+- IAM misconfiguration analysis
+
+## Security Lessons
+- Broad `sts:AssumeRole` permissions create escalation risk
+- Broad trust policies expand attack surface
+- Role chaining must be tightly controlled
+- Permissions and trust must both be reviewed during IAM audits
