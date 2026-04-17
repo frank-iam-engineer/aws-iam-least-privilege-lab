@@ -1,20 +1,15 @@
 # AWS IAM Least Privilege Lab
 
 ## Overview
-This project demonstrates real-world AWS IAM design using users, roles, trust policies, and permission policies.
+This project demonstrates practical AWS IAM engineering, focusing on least privilege access, role-based access control, and secure identity design using AWS STS.
 
-It focuses on:
-- Least privilege access
-- Role-based access control
-- Secure trust relationships
-- Role assumption using STS
-- Identification of IAM misconfigurations
+It simulates how real organizations manage access using roles instead of direct user permissions.
 
 ---
 
 ## Architecture
 
-byte-user
+Frank_IAM
   ├── Dev-ReadOnly-Role
   ├── QA-Role
   └── Admin-Role
@@ -24,36 +19,49 @@ Dev-ReadOnly-Role
 
 ---
 
-## Goals
-- Replace direct user permissions with role assumption
-- Enforce least privilege
-- Demonstrate role chaining
-- Identify and fix security flaws
+## Key Features
+- Role-based access control (RBAC)
+- Least privilege enforcement
+- Trust policy vs permission policy separation
+- Role assumption using AWS STS
+- Role chaining simulation
+- CLI-based validation and testing
 
 ---
 
 ## Evidence
+This project includes CLI-based proof of:
 
-This repository includes CLI evidence showing:
-- Base IAM user identity
-- Successful role assumption into Dev-ReadOnly-Role
-- Successful role chaining into EC2-Admin-Role
-- Permission-based success and failure cases
+- Base IAM identity
+- Successful role assumption
+- Role chaining across multiple roles
+- Permission-based success and failure scenarios
 
-## Key IAM Concepts Demonstrated
-- Least privilege
-- Trust policy vs permission policy
-- STS temporary credentials
-- Role assumption
-- Role chaining
-- IAM misconfiguration analysis
+---
 
-- ## Status
-In progress
+## Security Insights
 
+### 1. Trust vs Permission
+A role must both trust an identity AND the identity must have permission to assume it.
 
-## Security Lessons
-- Broad `sts:AssumeRole` permissions create escalation risk
-- Broad trust policies expand attack surface
-- Role chaining must be tightly controlled
-- Permissions and trust must both be reviewed during IAM audits
+### 2. Role Chaining Risk
+Low-privilege roles can escalate privileges if allowed to assume higher-privilege roles.
+
+### 3. Over-Permission Risk
+Using wildcard (`*`) in IAM policies increases attack surface.
+
+### 4. Access Control Precision
+Permissions like `s3:GetObject` and `s3:ListAllMyBuckets` must be explicitly defined.
+
+---
+
+## Lessons Learned
+- IAM is about controlling "who can access what"
+- Trust and permission must both be configured correctly
+- Error messages help identify permission vs configuration issues
+- Real validation requires CLI testing, not just policy writing
+
+---
+
+## Author
+Frank_IAM — IAM Engineer focused on identity security, least privilege, and real-world access control design
