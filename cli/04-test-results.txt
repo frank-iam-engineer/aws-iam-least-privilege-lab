@@ -1,0 +1,18 @@
+# Dev-ReadOnly-Role
+aws ec2 describe-instances
+Result: Success
+
+aws s3 ls
+Result: AccessDenied
+Reason: Missing s3:ListAllMyBuckets
+
+aws ec2 run-instances --image-id ami-1234567890abcdef0 --instance-type t2.micro --dry-run
+Result: Failed on invalid AMI, which indicates permission check passed under higher-privilege role when tested there
+
+# EC2-Admin-Role
+aws ec2 describe-instances
+Result: Success
+
+aws ec2 run-instances --image-id ami-1234567890abcdef0 --instance-type t2.micro --dry-run
+Result: InvalidAMIID.Malformed
+Reason: Request reached parameter validation, so access was not denied
