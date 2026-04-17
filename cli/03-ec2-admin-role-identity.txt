@@ -1,5 +1,5 @@
 {
     "UserId": "AROAYEI7PKS2FHBGM27FO:test",
     "Account": "558948635828",
-    "Arn": "arn:aws:sts::558948635828:assumed-role/ec2-admin-role/test"
+    "Arn": "arn:aws:sts::558948635828:assumed-role/Ec2-Admin-Role/test"
 }
