@@ -32,9 +32,6 @@ Dev-ReadOnly-Role
 
 ---
 
-## Status
-In progress
-
 ## Evidence
 
 This repository includes CLI evidence showing:
@@ -50,6 +47,10 @@ This repository includes CLI evidence showing:
 - Role assumption
 - Role chaining
 - IAM misconfiguration analysis
+
+- ## Status
+In progress
+
 
 ## Security Lessons
 - Broad `sts:AssumeRole` permissions create escalation risk
