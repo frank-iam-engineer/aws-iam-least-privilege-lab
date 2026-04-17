@@ -1,0 +1,5 @@
+{
+    "UserId": "AROAYEI7PKS2PDSN6MFJB:test",
+    "Account": "558948635828",
+    "Arn": "arn:aws:sts::558948635828:assumed-role/Dev-ReadOnly-Role/test"
+}
